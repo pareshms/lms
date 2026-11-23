@@ -22,9 +22,6 @@ http://localhost:8080
 | Role      | Username | Password  |
 |-----------|----------|-----------|
 | **Admin** | `admin`  | `admin123`|
-| Student   | `rahul`  | `pass123` |
-| Faculty   | `anjali` | `pass123` |
-
 ---
 
 ## 📦 Tech Stack
