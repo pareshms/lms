@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Reports — Library MS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="app-container">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><i class="fas fa-book-open"></i><h2>LibraryMS</h2></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+      <a href="books.html" class="nav-link"><i class="fas fa-book"></i><span>Books</span></a>
+      <a href="members.html" class="nav-link"><i class="fas fa-users"></i><span>Members</span></a>
+      <a href="issue.html" class="nav-link"><i class="fas fa-exchange-alt"></i><span>Issue / Return</span></a>
+      <a href="reports.html" class="nav-link active"><i class="fas fa-chart-bar"></i><span>Reports</span></a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left"><button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button><h1>Reports</h1></div>
+      <div class="topbar-right"><span class="user-name" id="userName"></span><button class="btn-logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></div>
+    </header>
+    <div class="content">
+      <!-- Overdue Report -->
+      <div class="card">
+        <div class="card-header"><h3><i class="fas fa-exclamation-triangle"></i> Overdue Books</h3><button class="btn btn-danger btn-sm" onclick="exportCSV('overdue')"><i class="fas fa-download"></i> Export CSV</button></div>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>Member</th><th>Book</th><th>Issued</th><th>Due</th><th>Overdue Days</th><th>Fine (₹)</th></tr></thead><tbody id="overdueTable"></tbody></table></div>
+      </div>
+      <!-- Issued Report -->
+      <div class="card">
+        <div class="card-header"><h3><i class="fas fa-book-reader"></i> All Issued Books</h3><button class="btn btn-primary btn-sm" onclick="exportCSV('issued')"><i class="fas fa-download"></i> Export CSV</button></div>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>Member</th><th>Book</th><th>ISBN</th><th>Issued</th><th>Due</th><th>Status</th><th>Fine (₹)</th></tr></thead><tbody id="issuedTable"></tbody></table></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="js/common.js"></script><script src="js/reports.js"></script>
+</body></html>
